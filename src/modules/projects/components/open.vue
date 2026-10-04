@@ -24,9 +24,9 @@ function openFile() {
     try {
       const json = JSON.parse(text)
 
-      // التحقق من أن الملف V2
-      if (!json.meta || json.meta.schemaVersion !== 2) {
-        emit('error', '⚠️ الملف الذي قمت بفتحه ليس مشروعًا بصيغة V2')
+      // التحقق من أن الملف V3
+      if (!json.meta || json.meta.schemaVersion !== 3) {
+        emit('error', '⚠️ الملف الذي قمت بفتحه ليس مشروعًا بصيغة V3')
         return
       }
 
