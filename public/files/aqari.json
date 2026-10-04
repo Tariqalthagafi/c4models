@@ -1,0 +1,152 @@
+{
+  "id": "proj-real-estate",
+  "name": "نظام ادارة املاك",
+  "description": "نظام إدارة العقارات والمباني والوحدات السكنية",
+
+  "meta": {
+    "schemaVersion": 1,
+    "createdAt": "2026-09-25T07:12:00Z",
+    "updatedAt": "2026-09-25T07:20:00Z",
+    "lastOpenedAt": "2026-09-25T07:20:00Z"
+  },
+
+  "settings": {
+    "theme": "light",
+    "grid": true,
+    "snap": true,
+    "zoom": 1,
+    "pan": { "x": 0, "y": 0 }
+  },
+
+  "versions": [
+    {
+      "id": "v1",
+      "title": "1.0",
+      "createdAt": "2026-10-01T03:30:00Z",
+
+      "nodes": [
+        {
+          "id": "root-platform",
+          "name": "منصة عقارية للبيع",
+          "type": "module",
+          "icon": "/c4icons/browser.svg",
+          "parentId": null,
+          "childrenIds": [],
+          "details": {
+            "description": "واجهة منصة لعرض وبيع العقارات.",
+            "position": { "x": 200, "y": 150 },
+            "collapsed": false
+          }
+        },
+        {
+          "id": "root-rent-finance",
+          "name": "تمويل الإيجار",
+          "type": "module",
+          "icon": "/c4icons/browser.svg",
+          "parentId": null,
+          "childrenIds": [],
+          "details": {
+            "description": "نظام تمويل عقود الإيجار وإدارة الدفعات.",
+            "position": { "x": 200, "y": 280 },
+            "collapsed": false
+          }
+        },
+        {
+          "id": "root-property-management",
+          "name": "إدارة الأملاك",
+          "type": "module",
+          "icon": "/c4icons/browser.svg",
+          "parentId": null,
+          "childrenIds": [],
+          "details": {
+            "description": "لوحة لإدارة العقارات، العقود، والمستأجرين.",
+            "position": { "x": 200, "y": 410 },
+            "collapsed": false
+          }
+        },
+        {
+          "id": "root-maintenance",
+          "name": "الصيانة",
+          "type": "module",
+          "icon": "/c4icons/browser.svg",
+          "parentId": null,
+          "childrenIds": [],
+          "details": {
+            "description": "نظام طلبات الصيانة ومتابعة التنفيذ.",
+            "position": { "x": 200, "y": 540 },
+            "collapsed": false
+          }
+        },
+        {
+          "id": "root-marketing",
+          "name": "التسويق العقاري",
+          "type": "module",
+          "icon": "/c4icons/browser.svg",
+          "parentId": null,
+          "childrenIds": [],
+          "details": {
+            "description": "منصة حملات التسويق للعقارات والعروض.",
+            "position": { "x": 200, "y": 670 },
+            "collapsed": false
+          }
+        },
+                {
+  "id": "root-admin",
+  "name": "الإدارة",
+  "type": "module",
+  "icon": "/c4icons/browser.svg",
+  "parentId": null,
+  "childrenIds": ["admin-users", "admin-finance", "admin-support"],
+  "details": {
+    "description": "الادارة العامة للنظام، المستخدمين، والصلاحيات.",
+    "position": { "x": 200, "y": 670 },
+    "collapsed": false
+  }
+}
+,
+        {
+  "id": "admin-users",
+  "name": "إدارة المستخدمين",
+  "type": "module",
+  "icon": "/c4icons/node.svg",
+  "parentId": "root-admin",
+  "childrenIds": [],
+  "details": {
+    "description": "إدارة الحسابات، الصلاحيات، والأدوار.",
+    "position": { "x": 450, "y": 640 },
+    "collapsed": false
+  }
+},
+{
+  "id": "admin-finance",
+  "name": "الإدارة المالية",
+  "type": "module",
+  "icon": "/c4icons/node.svg",
+  "parentId": "root-admin",
+  "childrenIds": [],
+  "details": {
+    "description": "إدارة الفواتير، الدفعات، والتقارير المالية.",
+    "position": { "x": 450, "y": 690 },
+    "collapsed": false
+  }
+},
+{
+  "id": "admin-support",
+  "name": "الدعم الفني",
+  "type": "module",
+  "icon": "/c4icons/node.svg",
+  "parentId": "root-admin",
+  "childrenIds": [],
+  "details": {
+    "description": "متابعة التذاكر، حل المشكلات، ودعم المستخدمين.",
+    "position": { "x": 450, "y": 740 },
+    "collapsed": false
+  }
+}
+
+      ],
+
+      "relations": []
+    }
+  ]
+}

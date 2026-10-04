@@ -1,0 +1,250 @@
+{
+  "id": "proj-exam-system",
+  "name": "Offline Exam System",
+  "description": "نظام اختبارات يعمل بدون إنترنت، ثلاث صفحات رئيسية وثلاثة مكونات لكل صفحة مع أحفاد.",
+
+  "meta": {
+    "schemaVersion": 1,
+    "createdAt": "2026-10-01T03:00:00Z"
+  },
+
+  "settings": {
+    "theme": "light",
+    "grid": true,
+    "snap": true,
+    "zoom": 1
+  },
+
+  "versions": [
+    {
+      "id": "v2",
+      "title": "2.0",
+      "createdAt": "2026-10-01T03:30:00Z",
+
+      "nodes": [
+
+
+        {
+          "id": "ui-dashboard",
+          "name": "Dashboard",
+          "type": "ui",
+          "icon": "/c4icons/browser.svg",
+          "parentId": null,
+          "childrenIds": ["dash-summary", "dash-progress", "dash-offline"],
+          "relations": [],
+          "details": {
+            "description": "الواجهة الرئيسية لعرض ملخص الاختبارات.",
+            "position": { "x": 300, "y": 200 },
+            "collapsed": false
+          }
+        },
+
+        {
+          "id": "dash-summary",
+          "name": "Summary Cards",
+          "type": "component",
+          "icon": "/c4icons/node.svg",
+          "parentId": "ui-dashboard",
+          "childrenIds": ["sum-card-1", "sum-card-2", "sum-card-3"],
+          "relations": [],
+          "details": {
+            "description": "بطاقات تعرض عدد الاختبارات، نسبة النجاح، وعدد المحاولات.",
+            "position": { "x": 550, "y": 150 },
+            "collapsed": false
+          }
+        },
+
+        {
+          "id": "dash-progress",
+          "name": "Progress Chart",
+          "type": "component",
+          "icon": "/c4icons/node.svg",
+          "parentId": "ui-dashboard",
+          "childrenIds": ["prog-sub-1", "prog-sub-2", "prog-sub-3"],
+          "relations": [],
+          "details": {
+            "description": "رسم بياني يوضح تقدم المستخدم في الاختبارات.",
+            "position": { "x": 550, "y": 200 },
+            "collapsed": false
+          }
+        },
+
+        {
+          "id": "dash-offline",
+          "name": "Offline Status",
+          "type": "component",
+          "icon": "/c4icons/node.svg",
+          "parentId": "ui-dashboard",
+          "childrenIds": ["off-sub-1", "off-sub-2", "off-sub-3"],
+          "relations": [],
+          "details": {
+            "description": "يعرض حالة الاتصال ويوضح ما إذا كان التطبيق يعمل Offline.",
+            "position": { "x": 550, "y": 250 },
+            "collapsed": false
+          }
+        },
+
+        { "id": "sum-card-1", "name": "Total Exams Card", "icon": "/c4icons/node.svg", "parentId": "dash-summary", "childrenIds": [], "relations": [], "details": { "description": "عدد الاختبارات.", "position": { "x": 800, "y": 120 }, "collapsed": false } },
+        { "id": "sum-card-2", "name": "Success Rate Card", "icon": "/c4icons/node.svg", "parentId": "dash-summary", "childrenIds": [], "relations": [], "details": { "description": "نسبة النجاح.", "position": { "x": 800, "y": 150 }, "collapsed": false } },
+        { "id": "sum-card-3", "name": "Attempts Card", "icon": "/c4icons/node.svg", "parentId": "dash-summary", "childrenIds": [], "relations": [], "details": { "description": "عدد المحاولات.", "position": { "x": 800, "y": 180 }, "collapsed": false } },
+
+        { "id": "prog-sub-1", "name": "Daily Progress", "icon": "/c4icons/node.svg", "parentId": "dash-progress", "childrenIds": [], "relations": [], "details": { "description": "تقدم يومي.", "position": { "x": 800, "y": 170 }, "collapsed": false } },
+        { "id": "prog-sub-2", "name": "Weekly Progress", "icon": "/c4icons/node.svg", "parentId": "dash-progress", "childrenIds": [], "relations": [], "details": { "description": "تقدم أسبوعي.", "position": { "x": 800, "y": 200 }, "collapsed": false } },
+        { "id": "prog-sub-3", "name": "Monthly Progress", "icon": "/c4icons/node.svg", "parentId": "dash-progress", "childrenIds": [], "relations": [], "details": { "description": "تقدم شهري.", "position": { "x": 800, "y": 230 }, "collapsed": false } },
+
+        { "id": "off-sub-1", "name": "Connection Status", "icon": "/c4icons/node.svg", "parentId": "dash-offline", "childrenIds": [], "relations": [], "details": { "description": "حالة الاتصال.", "position": { "x": 800, "y": 220 }, "collapsed": false } },
+        { "id": "off-sub-2", "name": "Sync Indicator", "icon": "/c4icons/node.svg", "parentId": "dash-offline", "childrenIds": [], "relations": [], "details": { "description": "حالة المزامنة.", "position": { "x": 800, "y": 250 }, "collapsed": false } },
+        { "id": "off-sub-3", "name": "Offline Mode Badge", "icon": "/c4icons/node.svg", "parentId": "dash-offline", "childrenIds": [], "relations": [], "details": { "description": "شارة وضع Offline.", "position": { "x": 800, "y": 280 }, "collapsed": false } },
+
+
+        {
+          "id": "ui-tests",
+          "name": "Tests Page",
+          "type": "ui",
+          "icon": "/c4icons/browser.svg",
+          "parentId": null,
+          "childrenIds": ["tests-list", "tests-filter", "tests-download"],
+          "relations": [],
+          "details": {
+            "description": "واجهة عرض قائمة الاختبارات المتاحة.",
+            "position": { "x": 300, "y": 400 },
+            "collapsed": false
+          }
+        },
+
+        {
+          "id": "tests-list",
+          "name": "Tests List",
+          "type": "component",
+          "icon": "/c4icons/node.svg",
+          "parentId": "ui-tests",
+          "childrenIds": ["list-sub-1", "list-sub-2", "list-sub-3"],
+          "relations": [],
+          "details": {
+            "description": "قائمة الاختبارات المتاحة للعمل Offline.",
+            "position": { "x": 550, "y": 350 },
+            "collapsed": false
+          }
+        },
+
+        {
+          "id": "tests-filter",
+          "name": "Filter Bar",
+          "type": "component",
+          "icon": "/c4icons/node.svg",
+          "parentId": "ui-tests",
+          "childrenIds": ["filter-sub-1", "filter-sub-2", "filter-sub-3"],
+          "relations": [],
+          "details": {
+            "description": "شريط الفلاتر لتصفية الاختبارات.",
+            "position": { "x": 550, "y": 400 },
+            "collapsed": false
+          }
+        },
+
+        {
+          "id": "tests-download",
+          "name": "Offline Download",
+          "type": "component",
+          "icon": "/c4icons/node.svg",
+          "parentId": "ui-tests",
+          "childrenIds": ["down-sub-1", "down-sub-2", "down-sub-3"],
+          "relations": [],
+          "details": {
+            "description": "زر لتحميل الاختبار للعمل بدون إنترنت.",
+            "position": { "x": 550, "y": 450 },
+            "collapsed": false
+          }
+        },
+
+        { "id": "list-sub-1", "name": "Exam Item", "icon": "/c4icons/node.svg", "parentId": "tests-list", "childrenIds": [], "relations": [], "details": { "description": "عنصر اختبار.", "position": { "x": 800, "y": 330 }, "collapsed": false } },
+        { "id": "list-sub-2", "name": "Exam Status", "icon": "/c4icons/node.svg", "parentId": "tests-list", "childrenIds": [], "relations": [], "details": { "description": "حالة الاختبار.", "position": { "x": 800, "y": 360 }, "collapsed": false } },
+        { "id": "list-sub-3", "name": "Exam Level", "icon": "/c4icons/node.svg", "parentId": "tests-list", "childrenIds": [], "relations": [], "details": { "description": "مستوى الاختبار.", "position": { "x": 800, "y": 390 }, "collapsed": false } },
+
+        { "id": "filter-sub-1", "name": "Level Filter", "icon": "/c4icons/node.svg", "parentId": "tests-filter", "childrenIds": [], "relations": [], "details": { "description": "فلتر المستوى.", "position": { "x": 800, "y": 420 }, "collapsed": false } },
+        { "id": "filter-sub-2", "name": "Type Filter", "icon": "/c4icons/node.svg", "parentId": "tests-filter", "childrenIds": [], "relations": [], "details": { "description": "فلتر النوع.", "position": { "x": 800, "y": 450 }, "collapsed": false } },
+        { "id": "filter-sub-3", "name": "Search Filter", "icon": "/c4icons/node.svg", "parentId": "tests-filter", "childrenIds": [], "relations": [], "details": { "description": "فلتر البحث.", "position": { "x": 800, "y": 480 }, "collapsed": false } },
+
+        { "id": "down-sub-1", "name": "Download Button", "icon": "/c4icons/node.svg", "parentId": "tests-download", "childrenIds": [], "relations": [], "details": { "description": "زر التحميل.", "position": { "x": 800, "y": 510 }, "collapsed": false } },
+        { "id": "down-sub-2", "name": "Download Status", "icon": "/c4icons/node.svg", "parentId": "tests-download", "childrenIds": [], "relations": [], "details": { "description": "حالة التحميل.", "position": { "x": 800, "y": 540 }, "collapsed": false } },
+        { "id": "down-sub-3", "name": "Download Size", "icon": "/c4icons/node.svg", "parentId": "tests-download", "childrenIds": [], "relations": [], "details": { "description": "حجم الاختبار.", "position": { "x": 800, "y": 570 }, "collapsed": false } },
+
+
+        {
+          "id": "ui-exam",
+          "name": "Exam Interface",
+          "type": "ui",
+          "icon": "/c4icons/browser.svg",
+          "parentId": null,
+          "childrenIds": ["exam-question", "exam-choices", "exam-timer"],
+          "relations": [],
+          "details": {
+            "description": "واجهة إجراء الاختبار Offline.",
+            "position": { "x": 300, "y": 600 },
+            "collapsed": false
+          }
+        },
+
+        {
+          "id": "exam-question",
+          "name": "Question Viewer",
+          "type": "component",
+          "icon": "/c4icons/node.svg",
+          "parentId": "ui-exam",
+          "childrenIds": ["q-sub-1", "q-sub-2", "q-sub-3"],
+          "relations": [],
+          "details": {
+            "description": "عرض نص السؤال.",
+            "position": { "x": 550, "y": 560 },
+            "collapsed": false
+          }
+        },
+
+        {
+          "id": "exam-choices",
+          "name": "Choices List",
+          "type": "component",
+          "icon": "/c4icons/node.svg",
+          "parentId": "ui-exam",
+          "childrenIds": ["c-sub-1", "c-sub-2", "c-sub-3"],
+          "relations": [],
+          "details": {
+            "description": "عرض خيارات الإجابة.",
+            "position": { "x": 550, "y": 610 },
+            "collapsed": false
+          }
+        },
+
+        {
+          "id": "exam-timer",
+          "name": "Exam Timer",
+          "type": "component",
+          "icon": "/c4icons/node.svg",
+          "parentId": "ui-exam",
+          "childrenIds": ["t-sub-1", "t-sub-2", "t-sub-3"],
+          "relations": [],
+          "details": {
+            "description": "عداد الوقت المتبقي.",
+            "position": { "x": 550, "y": 660 },
+            "collapsed": false
+          }
+        },
+
+        { "id": "q-sub-1", "name": "Question Text", "icon": "/c4icons/node.svg", "parentId": "exam-question", "childrenIds": [], "relations": [], "details": { "description": "نص السؤال.", "position": { "x": 800, "y": 540 }, "collapsed": false } },
+        { "id": "q-sub-2", "name": "Question Image", "icon": "/c4icons/node.svg", "parentId": "exam-question", "childrenIds": [], "relations": [], "details": { "description": "صورة السؤال.", "position": { "x": 800, "y": 570 }, "collapsed": false } },
+        { "id": "q-sub-3", "name": "Question Audio", "icon": "/c4icons/node.svg", "parentId": "exam-question", "childrenIds": [], "relations": [], "details": { "description": "صوت السؤال.", "position": { "x": 800, "y": 600 }, "collapsed": false } },
+
+        { "id": "c-sub-1", "name": "Choice Item", "icon": "/c4icons/node.svg", "parentId": "exam-choices", "childrenIds": [], "relations": [], "details": { "description": "خيار إجابة.", "position": { "x": 800, "y": 630 }, "collapsed": false } },
+        { "id": "c-sub-2", "name": "Choice Selector", "icon": "/c4icons/node.svg", "parentId": "exam-choices", "childrenIds": [], "relations": [], "details": { "description": "زر اختيار.", "position": { "x": 800, "y": 660 }, "collapsed": false } },
+        { "id": "c-sub-3", "name": "Choice Feedback", "icon": "/c4icons/node.svg", "parentId": "exam-choices", "childrenIds": [], "relations": [], "details": { "description": "تغذية راجعة.", "position": { "x": 800, "y": 690 }, "collapsed": false } },
+
+        { "id": "t-sub-1", "name": "Timer Display", "icon": "/c4icons/node.svg", "parentId": "exam-timer", "childrenIds": [], "relations": [], "details": { "description": "عرض الوقت.", "position": { "x": 800, "y": 720 }, "collapsed": false } },
+        { "id": "t-sub-2", "name": "Timer Controls", "icon": "/c4icons/node.svg", "parentId": "exam-timer", "childrenIds": [], "relations": [], "details": { "description": "أزرار التحكم.", "position": { "x": 800, "y": 750 }, "collapsed": false } },
+        { "id": "t-sub-3", "name": "Timer Alerts", "icon": "/c4icons/node.svg", "parentId": "exam-timer", "childrenIds": [], "relations": [], "details": { "description": "تنبيهات الوقت.", "position": { "x": 800, "y": 780 }, "collapsed": false } }
+
+      ],
+
+      "relations": []
+    }
+  ]
+}

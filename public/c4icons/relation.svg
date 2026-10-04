@@ -1,0 +1,26 @@
+<svg
+  width="140"
+  height="40"
+  viewBox="0 0 200 60"
+  xmlns="http://www.w3.org/2000/svg"
+>
+
+  <!-- الخط -->
+  <line
+    x1="10"
+    y1="30"
+    x2="160"
+    y2="30"
+    stroke="#000"
+    stroke-width="6"
+  />
+
+  <!-- رأس السهم -->
+  <polyline
+    points="140,10 190,30 140,50"
+    stroke="#000"
+    stroke-width="6"
+    fill="none"
+  />
+
+</svg>

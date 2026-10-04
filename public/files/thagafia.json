@@ -1,0 +1,326 @@
+{
+  "id": "proj-thagafia",
+  "name": "موقع ثقافي",
+  "description": "موقع ويب بسيط يعرض مقالات ومحتوى ثقافي",
+
+  "meta": {
+    "schemaVersion": 1,
+    "createdAt": "2026-10-03T08:55:00Z",
+    "updatedAt": "2026-10-03T08:55:00Z",
+    "lastOpenedAt": "2026-10-03T08:55:00Z"
+  },
+
+  "settings": {
+    "theme": "light",
+    "grid": true,
+    "snap": true,
+    "zoom": 1,
+    "pan": { "x": 0, "y": 0 }
+  },
+
+  "versions": [
+    {
+      "id": "v1",
+      "title": "1.0",
+      "createdAt": "2026-10-03T08:55:00Z",
+
+      "nodes": [
+        {
+          "id": "root-website",
+          "name": "الموقع الثقافي",
+          "type": "web app",
+          "icon": "/c4icons/browser.svg",
+          "parentId": null,
+          "childrenIds": [
+  "website-header",
+  "content-slider",
+  "content-values",
+  "content-about",
+  "content-partners",
+  "content-certifications",
+  "content-achievements2",
+  "content-contact"
+
+,
+  "website-footer"
+]
+,
+          "details": {
+            "description": " موقع ويب ثقافي تعريفي.",
+            "position": { "x": 200, "y": 200 },
+            "collapsed": false
+          }
+        },
+        {
+  "id": "website-header",
+  "name": "الهيدر",
+  "type": "section",
+  "icon": "/c4icons/node.svg",
+  "parentId": "root-website",
+  "childrenIds": [
+    "header-sidebar",
+    "header-about",
+    "header-activities",
+    "header-membership",
+    "header-logo",
+    "header-contact",
+    "header-language",
+    "header-profile"
+  ],
+  "details": {
+    "description": "الهيدر الرئيسي للموقع.",
+    "position": { "x": 450, "y": 160 },
+    "collapsed": false
+  }
+}
+,
+{
+  "id": "header-sidebar",
+  "name": "السايد بار",
+  "type": "component",
+  "icon": "/c4icons/node.svg",
+  "parentId": "website-header",
+  "childrenIds": [],
+  "details": {
+    "description": "قائمة جانبية تحتوي على روابط الموقع.",
+    "position": { "x": 750, "y": 120 },
+    "collapsed": false
+  }
+}
+,
+{
+  "id": "header-about",
+  "name": "عن الجمعية",
+  "type": "button",
+  "icon": "/c4icons/node.svg",
+  "parentId": "website-header",
+  "childrenIds": [],
+  "details": {
+    "description": "زر ينقل إلى صفحة عن الجمعية.",
+    "position": { "x": 750, "y": 160 },
+    "collapsed": false
+  }
+}
+,
+{
+  "id": "header-activities",
+  "name": "الأنشطة",
+  "type": "button",
+  "icon": "/c4icons/node.svg",
+  "parentId": "website-header",
+  "childrenIds": [],
+  "details": {
+    "description": "زر يعرض أنشطة الجمعية.",
+    "position": { "x": 750, "y": 200 },
+    "collapsed": false
+  }
+}
+,
+{
+  "id": "header-membership",
+  "name": "العضوية",
+  "type": "button",
+  "icon": "/c4icons/node.svg",
+  "parentId": "website-header",
+  "childrenIds": [],
+  "details": {
+    "description": "زر ينقل إلى صفحة اختيار العضويات.",
+    "position": { "x": 750, "y": 240 },
+    "collapsed": false
+  }
+}
+,
+{
+  "id": "header-logo",
+  "name": "اللوقو",
+  "type": "image",
+  "icon": "/c4icons/node.svg",
+  "parentId": "website-header",
+  "childrenIds": [],
+  "details": {
+    "description": "شعار الجمعية.",
+    "position": { "x": 750, "y": 280 },
+    "collapsed": false
+  }
+}
+,
+{
+  "id": "header-contact",
+  "name": "تواصل معنا",
+  "type": "button",
+  "icon": "/c4icons/node.svg",
+  "parentId": "website-header",
+  "childrenIds": [],
+  "details": {
+    "description": "زر ينقل إلى صفحة التواصل.",
+    "position": { "x": 750, "y": 320 },
+    "collapsed": false
+  }
+}
+,
+{
+  "id": "header-language",
+  "name": "تغيير اللغة",
+  "type": "button",
+  "icon": "/c4icons/node.svg",
+  "parentId": "website-header",
+  "childrenIds": [],
+  "details": {
+    "description": "زر تبديل لغة الموقع عربي انجليزي.",
+    "position": { "x": 750, "y": 360 },
+    "collapsed": false
+  }
+}
+,
+{
+  "id": "header-profile",
+  "name": "البروفايل",
+  "type": "button",
+  "icon": "/c4icons/node.svg",
+  "parentId": "website-header",
+  "childrenIds": [],
+  "details": {
+    "description": "زر يعرض صفحة المستخدم.",
+    "position": { "x": 750, "y": 400 },
+    "collapsed": false
+  }
+}
+,
+{
+  "id": "content-slider",
+  "name": "السلايدر",
+  "type": "section",
+  "icon": "/c4icons/node.svg",
+  "parentId": "website-content",
+  "childrenIds": ["content-join", "content-achievements"],
+  "details": {
+    "description": "سلايدر رئيسي يحتوي على صور وزر انضم وإنجازاتنا.",
+    "position": { "x": 750, "y": 160 },
+    "collapsed": false
+  }
+},
+{
+  "id": "content-join",
+  "name": "زر انضم",
+  "type": "component",
+  "icon": "/c4icons/node.svg",
+  "parentId": "content-slider",
+  "childrenIds": [],
+  "details": {
+    "description": "زر الانضمام للجمعية.",
+    "position": { "x": 1050, "y": 140 },
+    "collapsed": false
+  }
+},
+{
+  "id": "content-achievements",
+  "name": "إنجازاتنا",
+  "type": "component",
+  "icon": "/c4icons/node.svg",
+  "parentId": "content-slider",
+  "childrenIds": [],
+  "details": {
+    "description": "عرض مختصر لإنجازات الجمعية.",
+    "position": { "x": 1050, "y": 180 },
+    "collapsed": false
+  }
+},
+{
+  "id": "content-values",
+  "name": "قيمنا الأساسية",
+  "type": "section",
+  "icon": "/c4icons/node.svg",
+  "parentId": "website-content",
+  "childrenIds": [],
+  "details": {
+    "description": "عرض القيم الأساسية للجمعية.",
+    "position": { "x": 750, "y": 240 },
+    "collapsed": false
+  }
+},
+{
+  "id": "content-about",
+  "name": "عن الجمعية",
+  "type": "section",
+  "icon": "/c4icons/node.svg",
+  "parentId": "website-content",
+  "childrenIds": [],
+  "details": {
+    "description": "نبذة تعريفية عن الجمعية ورسالتها.",
+    "position": { "x": 750, "y": 300 },
+    "collapsed": false
+  }
+},
+{
+  "id": "content-partners",
+  "name": "شركاؤنا",
+  "type": "section",
+  "icon": "/c4icons/node.svg",
+  "parentId": "website-content",
+  "childrenIds": [],
+  "details": {
+    "description": "عرض شركاء الجمعية.",
+    "position": { "x": 750, "y": 360 },
+    "collapsed": false
+  }
+},
+{
+  "id": "content-certifications",
+  "name": "الاعتمادات الدولية",
+  "type": "section",
+  "icon": "/c4icons/node.svg",
+  "parentId": "website-content",
+  "childrenIds": [],
+  "details": {
+    "description": "الاعتمادات الدولية التي حصلت عليها الجمعية.",
+    "position": { "x": 750, "y": 420 },
+    "collapsed": false
+  }
+},
+{
+  "id": "content-achievements2",
+  "name": "الإنجازات",
+  "type": "section",
+  "icon": "/c4icons/node.svg",
+  "parentId": "website-content",
+  "childrenIds": [],
+  "details": {
+    "description": "عرض تفصيلي لإنجازات الجمعية.",
+    "position": { "x": 750, "y": 480 },
+    "collapsed": false
+  }
+},
+{
+  "id": "content-contact",
+  "name": "تواصل معنا",
+  "type": "section",
+  "icon": "/c4icons/node.svg",
+  "parentId": "website-content",
+  "childrenIds": [],
+  "details": {
+    "description": "نموذج التواصل ومعلومات الاتصال.",
+    "position": { "x": 750, "y": 540 },
+    "collapsed": false
+  }
+}
+,
+{
+  "id": "website-footer",
+  "name": "الفوتر",
+  "type": "section",
+  "icon": "/c4icons/node.svg",
+  "parentId": "root-website",
+  "childrenIds": [],
+  "details": {
+    "description": "الجزء السفلي للموقع ويحتوي على الروابط وحقوق النشر.",
+    "position": { "x": 450, "y": 280 },
+    "collapsed": false
+  }
+}
+
+      ],
+
+      "relations": []
+    }
+  ]
+}

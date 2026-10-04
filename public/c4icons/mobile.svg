@@ -1,0 +1,39 @@
+<svg
+  width="120"
+  height="200"
+  viewBox="0 0 300 500"
+  xmlns="http://www.w3.org/2000/svg"
+>
+
+  <!-- جسم الجوال (مستطيل رأسي) -->
+  <rect
+    x="50"
+    y="40"
+    width="200"
+    height="420"
+    rx="30"
+    ry="30"
+    stroke="#000"
+    stroke-width="10"
+    fill="none"
+  />
+
+  <!-- السماعة (خط علوي صغير) -->
+  <line
+    x1="120"
+    y1="90"
+    x2="180"
+    y2="90"
+    stroke="#000"
+    stroke-width="10"
+  />
+
+  <!-- زر الهوم (نقطة في الأسفل) -->
+  <circle
+    cx="150"
+    cy="420"
+    r="12"
+    fill="#000"
+  />
+
+</svg>

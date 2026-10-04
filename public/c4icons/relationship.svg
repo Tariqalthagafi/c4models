@@ -1,0 +1,25 @@
+<svg
+  width="120"
+  height="40"
+  viewBox="0 0 300 60"
+  xmlns="http://www.w3.org/2000/svg"
+>
+
+  <!-- خط العلاقة -->
+  <line
+    x1="10"
+    y1="30"
+    x2="260"
+    y2="30"
+    stroke="#000"
+    stroke-width="4"
+    stroke-dasharray="10 8"
+  />
+
+  <!-- رأس السهم -->
+  <polygon
+    points="260,20 290,30 260,40"
+    fill="#000"
+  />
+
+</svg>

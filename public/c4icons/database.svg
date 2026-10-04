@@ -1,0 +1,48 @@
+<svg
+  width="80"
+  height="80"
+  viewBox="0 0 300 230"
+  xmlns="http://www.w3.org/2000/svg"
+>
+
+  <!-- الجزء العلوي (البيضاوي) -->
+  <ellipse
+    cx="150"
+    cy="40"
+    rx="120"
+    ry="30"
+    stroke="#000"
+    stroke-width="4"
+    fill="none"
+  />
+
+  <!-- الجوانب -->
+  <path
+    d="M30 40 
+       L30 160 
+       M270 40
+       L270 160"
+    stroke="#000"
+    stroke-width="4"
+    fill="none"
+  />
+
+  <!-- نصف دائرة في المنتصف -->
+  <path
+    d="M30 100
+       A120 30 0 0 0 270 100"
+    stroke="#000"
+    stroke-width="3"
+    fill="none"
+  />
+
+  <!-- الجزء السفلي -->
+  <path
+    d="M30 160
+       A120 30 0 0 0 270 160"
+    stroke="#000"
+    stroke-width="4"
+    fill="none"
+  />
+
+</svg>

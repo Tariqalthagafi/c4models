@@ -1,0 +1,103 @@
+{
+  "id": "proj-c4",
+  "name": "تطبيق C4",
+  "description": "تطبيق ويب يحتوي على عارض الرسومات ومحرر الرسومات وملف JSON مستقل.",
+
+  "meta": {
+    "schemaVersion": 1,
+    "createdAt": "2026-10-04T04:48:00Z",
+    "updatedAt": "2026-10-04T04:48:00Z",
+    "lastOpenedAt": "2026-10-04T04:48:00Z"
+  },
+
+  "settings": {
+    "theme": "light",
+    "grid": true,
+    "snap": true,
+    "zoom": 1,
+    "pan": { "x": 0, "y": 0 }
+  },
+
+  "versions": [
+    {
+      "id": "v1",
+      "title": "1.0",
+      "createdAt": "2026-10-04T04:48:00Z",
+
+      "nodes": [
+        {
+          "id": "root-webapp",
+          "name": "تطبيق ويب رئيسي",
+          "type": "web app",
+          "icon": "/c4icons/browser.svg",
+          "parentId": null,
+          "childrenIds": ["viewer-module", "editor-module"],
+          "details": {
+            "description": "التطبيق الرئيسي الذي يحتوي على العارض والمحرر.",
+            "position": { "x": 200, "y": 200 },
+            "collapsed": false
+          }
+        },
+
+        {
+          "id": "viewer-module",
+          "name": "عارض الرسومات",
+          "type": "module",
+          "icon": "/c4icons/node.svg",
+          "parentId": "root-webapp",
+          "childrenIds": [],
+          "details": {
+            "description": "وحدة عرض الرسومات.",
+            "position": { "x": 500, "y": 160 },
+            "collapsed": false
+          }
+        },
+
+        {
+          "id": "editor-module",
+          "name": "محرر الرسومات",
+          "type": "module",
+          "icon": "/c4icons/node.svg",
+          "parentId": "root-webapp",
+          "childrenIds": [],
+          "details": {
+            "description": "وحدة تحرير الرسومات.",
+            "position": { "x": 500, "y": 240 },
+            "collapsed": false
+          }
+        },
+
+        {
+          "id": "json-file",
+          "name": "ملف JSON",
+          "type": "data",
+          "icon": "/c4icons/node.svg",
+          "parentId": null,
+          "childrenIds": [],
+          "details": {
+            "description": "ملف بيانات JSON مستقل يستخدمه العارض والمحرر.",
+            "position": { "x": 500, "y": 360 },
+            "collapsed": false
+          }
+        }
+      ],
+
+      "relations": [
+        {
+          "id": "rel-json-viewer",
+          "from": "json-file",
+          "to": "viewer-module",
+          "type": "uses",
+          "description": "العارض يعتمد على ملف JSON لعرض البيانات."
+        },
+        {
+          "id": "rel-json-editor",
+          "from": "json-file",
+          "to": "editor-module",
+          "type": "uses",
+          "description": "المحرر يعتمد على ملف JSON لتحرير البيانات."
+        }
+      ]
+    }
+  ]
+}

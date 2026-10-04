@@ -1,0 +1,22 @@
+<svg
+  width="80"
+  height="80"
+  viewBox="0 0 300 180"
+  xmlns="http://www.w3.org/2000/svg"
+>
+
+  <!-- مستطيل خارجي بنمط dashed -->
+  <rect
+    x="5"
+    y="5"
+    width="290"
+    height="170"
+    rx="12"
+    ry="12"
+    stroke="#000"
+    stroke-width="4"
+    stroke-dasharray="10 8"
+    fill="none"
+  />
+
+</svg>

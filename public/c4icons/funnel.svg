@@ -1,0 +1,38 @@
+<svg
+  width="120"
+  height="120"
+  viewBox="0 0 300 220"
+  xmlns="http://www.w3.org/2000/svg"
+>
+
+  <!-- الخط العلوي البيضاوي -->
+  <ellipse
+    cx="150"
+    cy="50"
+    rx="120"
+    ry="25"
+    stroke="#000"
+    stroke-width="6"
+    fill="none"
+  />
+
+  <!-- الجوانب المنحدرة -->
+  <path
+    d="M30 50 L100 150
+       M270 50 L200 150"
+    stroke="#000"
+    stroke-width="6"
+    fill="none"
+  />
+
+  <!-- الخط السفلي المستقيم -->
+  <line
+    x1="100"
+    y1="150"
+    x2="200"
+    y2="150"
+    stroke="#000"
+    stroke-width="6"
+  />
+
+</svg>

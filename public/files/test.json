@@ -1,0 +1,568 @@
+{
+  "id": "proj-demo",
+  "name": "Demo System",
+  "description": "نظام تجريبي بثلاث آباء وثلاثة أبناء لكل أب مع أحفاد",
+
+  "meta": {
+    "schemaVersion": 1,
+    "createdAt": "2026-10-01T03:00:00Z"
+  },
+
+  "settings": {
+    "theme": "light",
+    "grid": true,
+    "snap": true,
+    "zoom": 1
+  },
+
+  "versions": [
+    {
+      "id": "v2",
+      "title": "2.0",
+      "createdAt": "2026-10-01T03:30:00Z",
+
+      "nodes": [
+
+
+{
+  "id": "parent-a",
+  "name": "Parent A",
+  "type": "module",
+  "icon": "/c4icons/folder.svg",
+
+  "parentId": null,
+  "childrenIds": ["a-child-1", "a-child-2", "a-child-3"],
+
+  "relations": [
+   
+  ],
+
+  "details": {
+    "description": "First parent module.",
+    "position": { "x": 300, "y": 200 },
+    "collapsed": false
+  }
+},
+{
+  "id": "a-child-1",
+  "name": "A Child 1",
+  "type": "feature",
+  "icon": "/c4icons/node.svg",
+
+  "parentId": "parent-a",
+  "childrenIds": ["a1-sub-1", "a1-sub-2", "a1-sub-3"],
+
+  "relations": [
+   
+  ],
+
+  "details": {
+    "description": "Child 1 of Parent A.",
+    "position": { "x": 550, "y": 150 },
+    "collapsed": false
+  }
+},
+{
+  "id": "a-child-2",
+  "name": "A Child 2",
+  "type": "feature",
+  "icon": "/c4icons/node.svg",
+
+  "parentId": "parent-a",
+  "childrenIds": ["a2-sub-1", "a2-sub-2", "a2-sub-3"],
+
+ 
+  "details": {
+    "description": "Child 2 of Parent A.",
+    "position": { "x": 550, "y": 200 },
+    "collapsed": false
+  }
+},
+
+{
+  "id": "a-child-3",
+  "name": "A Child 3",
+  "type": "feature",
+  "icon": "/c4icons/node.svg",
+
+  "parentId": "parent-a",
+  "childrenIds": ["a3-sub-1", "a3-sub-2", "a3-sub-3"],
+
+  "relations": [
+  
+  ],
+
+  "details": {
+    "description": "Child 3 of Parent A.",
+    "position": { "x": 550, "y": 250 },
+    "collapsed": false
+  }
+},
+
+
+
+        { "id": "a1-sub-1", "name": "A1 Sub 1", "icon": "/c4icons/node.svg", "parentId": "a-child-1", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 120 }, "collapsed": false } },
+        { "id": "a1-sub-2", "name": "A1 Sub 2", "icon": "/c4icons/node.svg", "parentId": "a-child-1", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 150 }, "collapsed": false } },
+        { "id": "a1-sub-3", "name": "A1 Sub 3", "icon": "/c4icons/node.svg", "parentId": "a-child-1", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 180 }, "collapsed": false } },
+
+        { "id": "a2-sub-1", "name": "A2 Sub 1", "icon": "/c4icons/node.svg", "parentId": "a-child-2", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 170 }, "collapsed": false } },
+        { "id": "a2-sub-2", "name": "A2 Sub 2", "icon": "/c4icons/node.svg", "parentId": "a-child-2", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 200 }, "collapsed": false } },
+        { "id": "a2-sub-3", "name": "A2 Sub 3", "icon": "/c4icons/node.svg", "parentId": "a-child-2", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 230 }, "collapsed": false } },
+
+        { "id": "a3-sub-1", "name": "A3 Sub 1", "icon": "/c4icons/node.svg", "parentId": "a-child-3", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 220 }, "collapsed": false } },
+        { "id": "a3-sub-2", "name": "A3 Sub 2", "icon": "/c4icons/node.svg", "parentId": "a-child-3", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 250 }, "collapsed": false } },
+        { "id": "a3-sub-3", "name": "A3 Sub 3", "icon": "/c4icons/node.svg", "parentId": "a-child-3", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 280 }, "collapsed": false } },
+
+ 
+        {
+          "id": "parent-b",
+          "name": "Parent B",
+          "type": "module",
+          "icon": "/c4icons/folder.svg",
+
+          "parentId": null,
+          "childrenIds": ["b-child-1", "b-child-2", "b-child-3"],
+
+          "relations": [],
+
+          "details": {
+            "description": "Second parent module.",
+            "position": { "x": 300, "y": 400 },
+            "collapsed": false
+          }
+        },
+
+
+
+        {
+          "id": "b-child-1",
+          "name": "B Child 1",
+          "type": "feature",
+          "icon": "/c4icons/node.svg",
+
+          "parentId": "parent-b",
+          "childrenIds": ["b1-sub-1", "b1-sub-2", "b1-sub-3"],
+
+          "relations": [],
+
+          "details": {
+            "description": "Child 1 of Parent B.",
+            "position": { "x": 550, "y": 350 },
+            "collapsed": false
+          }
+        },
+
+        {
+          "id": "b-child-2",
+          "name": "B Child 2",
+          "type": "feature",
+          "icon": "/c4icons/node.svg",
+
+          "parentId": "parent-b",
+          "childrenIds": ["b2-sub-1", "b2-sub-2", "b2-sub-3"],
+
+          "relations": [],
+
+          "details": {
+            "description": "Child 2 of Parent B.",
+            "position": { "x": 550, "y": 400 },
+            "collapsed": false
+          }
+        },
+
+        {
+          "id": "b-child-3",
+          "name": "B Child 3",
+          "type": "feature",
+          "icon": "/c4icons/node.svg",
+
+          "parentId": "parent-b",
+          "childrenIds": ["b3-sub-1", "b3-sub-2", "b3-sub-3"],
+
+          "relations": [],
+
+          "details": {
+            "description": "Child 3 of Parent B.",
+            "position": { "x": 550, "y": 450 },
+            "collapsed": false
+          }
+        },
+
+
+
+        { "id": "b1-sub-1", "name": "B1 Sub 1", "icon": "/c4icons/node.svg", "parentId": "b-child-1", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 320 }, "collapsed": false } },
+        { "id": "b1-sub-2", "name": "B1 Sub 2", "icon": "/c4icons/node.svg", "parentId": "b-child-1", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 350 }, "collapsed": false } },
+        { "id": "b1-sub-3", "name": "B1 Sub 3", "icon": "/c4icons/node.svg", "parentId": "b-child-1", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 380 }, "collapsed": false } },
+
+        { "id": "b2-sub-1", "name": "B2 Sub 1", "icon": "/c4icons/node.svg", "parentId": "b-child-2", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 370 }, "collapsed": false } },
+        { "id": "b2-sub-2", "name": "B2 Sub 2", "icon": "/c4icons/node.svg", "parentId": "b-child-2", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 400 }, "collapsed": false } },
+        { "id": "b2-sub-3", "name": "B2 Sub 3", "icon": "/c4icons/node.svg", "parentId": "b-child-2", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 430 }, "collapsed": false } },
+
+        { "id": "b3-sub-1", "name": "B3 Sub 1", "icon": "/c4icons/node.svg", "parentId": "b-child-3", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 420 }, "collapsed": false } },
+        { "id": "b3-sub-2", "name": "B3 Sub 2", "icon": "/c4icons/node.svg", "parentId": "b-child-3", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 450 }, "collapsed": false } },
+        { "id": "b3-sub-3", "name": "B3 Sub 3", "icon": "/c4icons/node.svg", "parentId": "b-child-3", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 480 }, "collapsed": false } },
+
+
+        {
+          "id": "parent-c",
+          "name": "Parent C",
+          "type": "module",
+          "icon": "/c4icons/folder.svg",
+
+          "parentId": null,
+          "childrenIds": ["c-child-1", "c-child-2", "c-child-3"],
+
+          "relations": [],
+
+          "details": {
+            "description": "Third parent module.",
+            "position": { "x": 300, "y": 600 },
+            "collapsed": false
+          }
+        },
+
+
+
+        {
+          "id": "c-child-1",
+          "name": "C Child 1",
+          "type": "feature",
+          "icon": "/c4icons/node.svg",
+
+          "parentId": "parent-c",
+          "childrenIds": ["c1-sub-1", "c1-sub-2", "c1-sub-3"],
+
+          "relations": [],
+
+          "details": {
+            "description": "Child 1 of Parent C.",
+            "position": { "x": 550, "y": 550 },
+            "collapsed": false
+          }
+        },
+
+        {
+          "id": "c-child-2",
+          "name": "C Child 2",
+          "type": "feature",
+          "icon": "/c4icons/node.svg",
+
+          "parentId": "parent-c",
+          "childrenIds": ["c2-sub-1", "c2-sub-2", "c2-sub-3"],
+
+          "relations": [],
+
+          "details": {
+            "description": "Child 2 of Parent C.",
+            "position": { "x": 550, "y": 600 },
+            "collapsed": false
+          }
+        },
+
+        {
+          "id": "c-child-3",
+          "name": "C Child 3",
+          "type": "feature",
+          "icon": "/c4icons/node.svg",
+
+          "parentId": "parent-c",
+          "childrenIds": ["c3-sub-1", "c3-sub-2", "c3-sub-3"],
+
+          "relations": [],
+
+          "details": {
+            "description": "Child 3 of Parent C.",
+            "position": { "x": 550, "y": 650 },
+            "collapsed": false
+          }
+        },
+
+
+
+        { "id": "c1-sub-1", "name": "C1 Sub 1", "icon": "/c4icons/node.svg", "parentId": "c-child-1", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 520 }, "collapsed": false } },
+        { "id": "c1-sub-2", "name": "C1 Sub 2", "icon": "/c4icons/node.svg", "parentId": "c-child-1", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 550 }, "collapsed": false } },
+        { "id": "c1-sub-3", "name": "C1 Sub 3", "icon": "/c4icons/node.svg", "parentId": "c-child-1", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 580 }, "collapsed": false } },
+
+        { "id": "c2-sub-1", "name": "C2 Sub 1", "icon": "/c4icons/node.svg", "parentId": "c-child-2", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 570 }, "collapsed": false } },
+        { "id": "c2-sub-2", "name": "C2 Sub 2", "icon": "/c4icons/node.svg", "parentId": "c-child-2", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 600 }, "collapsed": false } },
+        { "id": "c2-sub-3", "name": "C2 Sub 3", "icon": "/c4icons/node.svg", "parentId": "c-child-2", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 630 }, "collapsed": false } },
+
+        { "id": "c3-sub-1", "name": "C3 Sub 1", "icon": "/c4icons/node.svg", "parentId": "c-child-3", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 620 }, "collapsed": false } },
+        { "id": "c3-sub-2", "name": "C3 Sub 2", "icon": "/c4icons/node.svg", "parentId": "c-child-3", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 650 }, "collapsed": false } },
+        { "id": "c3-sub-3", "name": "C3 Sub 3", "icon": "/c4icons/node.svg", "parentId": "c-child-3", "childrenIds": [], "relations": [], "details": { "description": "", "position": { "x": 800, "y": 650 }, "collapsed": false } }
+    ],
+
+       "relations": [
+    {
+      "id": "rel-a2-parent-a",
+      "from": "a-child-2",
+      "to": "parent-a",
+      "label": "receives configuration",
+      "type": "read",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+    {
+      "id": "rel-a2-child-1",
+      "from": "a-child-2",
+      "to": "a-child-1",
+      "label": "calls shared API",
+      "type": "call",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+    {
+      "id": "rel-a2-child-3",
+      "from": "a-child-2",
+      "to": "a-child-3",
+      "label": "writes metrics",
+      "type": "write",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+
+    {
+      "id": "rel-a2-sub-1",
+      "from": "a-child-2",
+      "to": "a2-sub-1",
+      "label": "delegates processing",
+      "type": "dependency",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+    {
+      "id": "rel-a2-sub-2",
+      "from": "a-child-2",
+      "to": "a2-sub-2",
+      "label": "triggers workflow",
+      "type": "event",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+    {
+      "id": "rel-a2-sub-3",
+      "from": "a-child-2",
+      "to": "a2-sub-3",
+      "label": "reads cached data",
+      "type": "read",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+
+    {
+      "id": "rel-a2-cross-b",
+      "from": "a-child-2",
+      "to": "b-child-1",
+      "label": "cross-module sync",
+      "type": "integration",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+    {
+      "id": "rel-a2-cross-c",
+      "from": "a-child-2",
+      "to": "c-child-3",
+      "label": "cross-module event",
+      "type": "event",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+     {
+      "id": "rel-parent-a-b",
+      "from": "parent-a",
+      "to": "parent-b",
+      "label": "syncs data",
+      "type": "integration",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+    {
+      "id": "rel-parent-a-c",
+      "from": "parent-a",
+      "to": "parent-c",
+      "label": "depends on",
+      "type": "dependency",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+    {
+      "id": "rel-parent-a-event",
+      "from": "parent-a",
+      "to": "parent-c",
+      "label": "triggers update",
+      "type": "event",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+
+    {
+      "id": "rel-parent-a-child-1",
+      "from": "parent-a",
+      "to": "a-child-1",
+      "label": "initializes",
+      "type": "call",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+    {
+      "id": "rel-parent-a-child-2",
+      "from": "parent-a",
+      "to": "a-child-2",
+      "label": "configures",
+      "type": "write",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+    {
+      "id": "rel-parent-a-child-3",
+      "from": "parent-a",
+      "to": "a-child-3",
+      "label": "reads metrics",
+      "type": "read",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+
+    {
+      "id": "rel-parent-a-cross-b",
+      "from": "parent-a",
+      "to": "b-child-3",
+      "label": "cross-module sync",
+      "type": "integration",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+    {
+      "id": "rel-parent-a-cross-c",
+      "from": "parent-a",
+      "to": "c-child-2",
+      "label": "cross-module event",
+      "type": "event",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+     {
+      "id": "rel-a1-parent-a",
+      "from": "a-child-1",
+      "to": "parent-a",
+      "label": "receives initialization",
+      "type": "call",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+    {
+      "id": "rel-a1-child-2",
+      "from": "a-child-1",
+      "to": "a-child-2",
+      "label": "calls API",
+      "type": "call",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+    {
+      "id": "rel-a1-child-3",
+      "from": "a-child-1",
+      "to": "a-child-3",
+      "label": "reads shared config",
+      "type": "read",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+
+    {
+      "id": "rel-a1-sub-1",
+      "from": "a-child-1",
+      "to": "a1-sub-1",
+      "label": "delegates task",
+      "type": "dependency",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+    {
+      "id": "rel-a1-sub-2",
+      "from": "a-child-1",
+      "to": "a1-sub-2",
+      "label": "triggers event",
+      "type": "event",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+    {
+      "id": "rel-a1-sub-3",
+      "from": "a-child-1",
+      "to": "a1-sub-3",
+      "label": "writes logs",
+      "type": "write",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+
+    {
+      "id": "rel-a1-cross-b",
+      "from": "a-child-1",
+      "to": "b-child-3",
+      "label": "cross-module call",
+      "type": "call",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+    {
+      "id": "rel-a1-cross-c",
+      "from": "a-child-1",
+      "to": "c-child-1",
+      "label": "cross-module sync",
+      "type": "integration",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+      {
+      "id": "rel-a3-parent-a",
+      "from": "a-child-3",
+      "to": "parent-a",
+      "label": "reads configuration",
+      "type": "read",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+    {
+      "id": "rel-a3-child-1",
+      "from": "a-child-3",
+      "to": "a-child-1",
+      "label": "writes logs",
+      "type": "write",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+    {
+      "id": "rel-a3-child-2",
+      "from": "a-child-3",
+      "to": "a-child-2",
+      "label": "calls shared API",
+      "type": "call",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+
+    {
+      "id": "rel-a3-sub-1",
+      "from": "a-child-3",
+      "to": "a3-sub-1",
+      "label": "delegates processing",
+      "type": "dependency",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+    {
+      "id": "rel-a3-sub-2",
+      "from": "a-child-3",
+      "to": "a3-sub-2",
+      "label": "triggers workflow",
+      "type": "event",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+    {
+      "id": "rel-a3-sub-3",
+      "from": "a-child-3",
+      "to": "a3-sub-3",
+      "label": "reads cached data",
+      "type": "read",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+
+    {
+      "id": "rel-a3-cross-b",
+      "from": "a-child-3",
+      "to": "b-child-2",
+      "label": "cross-module sync",
+      "type": "integration",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    },
+    {
+      "id": "rel-a3-cross-c",
+      "from": "a-child-3",
+      "to": "c-child-3",
+      "label": "cross-module event",
+      "type": "event",
+      "description": "هذا المكون يستدعي API مشترك للحصول على البيانات."
+    }
+  ]
+
+    }
+
+  ],
+
+  "currentVersionId": "v2"
+
+}
