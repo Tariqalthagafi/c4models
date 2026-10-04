@@ -1,14 +1,14 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 // General
-import Home from '../General/pages/Home.vue'
+import Home from '../general/pages/Home.vue'
 
 // MainApp Pages
 import Main from '../modules/main/Main.vue'
 import Projects from '../modules/projects/projects.vue'
 import Workspace from '../modules/Editor/workspace.vue'
 import Versions from '../modules/versions/versions.vue'
-import Approvals from '../modules/approvals/Approvals.vue'
+import Approvals from '../modules/Approvals/Approvals.vue'
 import UsersPage from '../modules/usermanagement/UsersPage.vue'
 import Notifications from '../modules/Notifications/Notifications.vue'
 import Settings from '../modules/Settings/Settings.vue'
