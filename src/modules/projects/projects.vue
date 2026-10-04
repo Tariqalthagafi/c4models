@@ -24,7 +24,7 @@ import Open from './components/open.vue'
 import { useProjectsStore } from '../../core/stores/useProjectsStore.ts'
 import { useEditorProjectsStore } from '@/core/stores/useEditorProjectsStore'
 import { useRouter } from 'vue-router'
-import type { ProjectSchemaV2 } from '@/core/schema/projectSchemaV3.ts'
+import type { ProjectSchemaV3 } from '@/core/schema/projectSchemaV3.ts'
 
 // ستور المشاريع
 const store = useProjectsStore()
@@ -54,7 +54,7 @@ function editProject(id: string) {
 }
 
 /* تحميل المشروع */
-function downloadModel(project: ProjectSchemaV2) {
+function downloadModel(project: ProjectSchemaV3) {
   const json = JSON.stringify(project, null, 2)
   const blob = new Blob([json], { type: 'application/json' })
   const url = URL.createObjectURL(blob)

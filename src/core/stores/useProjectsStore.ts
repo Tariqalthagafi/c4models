@@ -64,7 +64,7 @@ export const useProjectsStore = defineStore('projects', () => {
     if (!jsonFile) return
 
     if (!jsonFile.meta || jsonFile.meta.schemaVersion !== 2) {
-      console.warn('❌ الملف ليس بصيغة ProjectSchemaV2')
+      console.warn('❌ الملف ليس بصيغة ProjectSchemaV3')
       return
     }
 
