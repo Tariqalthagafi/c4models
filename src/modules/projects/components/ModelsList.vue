@@ -1,10 +1,6 @@
 <template>
   <div class="models-grid">
-    <div
-      class="model-card"
-      v-for="m in models"
-      :key="m.id"
-    >
+    <div class="model-card" v-for="m in models" :key="m.id">
       <div class="model-info">
         <h3 class="name">{{ m.name }}</h3>
 
@@ -48,7 +44,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ProjectSchemaV3 } from '@/core/schema/projectSchemaV2'
+import type { ProjectSchemaV3 } from '@/core/schema/projectSchemaV3'
 
 const props = defineProps<{
   models: ProjectSchemaV3[]
@@ -56,7 +52,7 @@ const props = defineProps<{
 
 function currentVersion(model: ProjectSchemaV3) {
   if (!model.currentVersionId) return null
-  return model.versions.find(v => v.id === model.currentVersionId) || null
+  return model.versions.find((v) => v.id === model.currentVersionId) || null
 }
 
 function formatDate(date: string) {
@@ -78,7 +74,7 @@ function formatDate(date: string) {
   border: 1px solid #e5e7eb;
   padding: 16px;
   border-radius: 8px;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
   display: flex;
   flex-direction: column;
   height: 200px;

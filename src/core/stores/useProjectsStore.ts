@@ -3,14 +3,14 @@ import { defineStore } from 'pinia'
 
 import { useJsonStore } from '@/core/stores/useJsonStore'
 import {
-  type ProjectSchemaV2,
-  createDefaultProjectV2
-} from '@/core/schema/projectSchemaV2'
+  type ProjectSchemaV3,
+  createDefaultProjectV3
+} from '@/core/schema/projectSchemaV3.ts'
 
 export const useProjectsStore = defineStore('projects', () => {
 
   const json = useJsonStore()
-  const models = ref<ProjectSchemaV2[]>([])
+  const models = ref<ProjectSchemaV3[]>([])
 
   // -------------------------------------------------------------
   // تحميل جميع المشاريع من IndexedDB
@@ -23,7 +23,7 @@ export const useProjectsStore = defineStore('projects', () => {
   // إنشاء مشروع جديد
   // -------------------------------------------------------------
   async function createModel(name: string) {
-    const project = createDefaultProjectV2(name)
+    const project = createDefaultProjectV3(name)
     await json.add('projects', project)
     await loadProjects()
     return project.id
@@ -47,7 +47,7 @@ export const useProjectsStore = defineStore('projects', () => {
   // -------------------------------------------------------------
   // تحديث مشروع
   // -------------------------------------------------------------
-  async function updateModel(project: ProjectSchemaV2) {
+  async function updateModel(project: ProjectSchemaV3) {
     project.meta.updatedAt = new Date().toISOString()
 
     const clean = json.cloneSafe(project)

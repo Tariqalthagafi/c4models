@@ -4,14 +4,12 @@ import { useProjectsStore } from './useProjectsStore'
 import { useEditorProjectsStore } from './useEditorProjectsStore'
 import { useCurrentProjectStore } from './useCurrentProjectStore'
 import { useIdGeneratorStore } from './useIdGeneratorStore'
-import { createDefaultProjectV2 } from '@/core/schema/projectSchemaV2'
+import { createDefaultProjectV3 } from '@/core/schema/projectSchemaV3'
 import { useJsonStore } from './useJsonStore'
 
 export const useProjectCreationStore = defineStore('projectCreation', {
   actions: {
-
     async createNewProject() {
-
       const projectsStore = useProjectsStore()
       const editor = useEditorProjectsStore()
       const current = useCurrentProjectStore()
@@ -25,7 +23,7 @@ export const useProjectCreationStore = defineStore('projectCreation', {
       const name = `Project ${newProjectId}`
 
       // إنشاء مشروع V2 كامل
-      const project = createDefaultProjectV2(name)
+      const project = createDefaultProjectV3(name)
       project.id = newProjectId
 
       // إضافة المشروع إلى IndexedDB
@@ -45,6 +43,6 @@ export const useProjectCreationStore = defineStore('projectCreation', {
 
       // تحميل المشروع على الكانفاس
       await current.loadProject(project.id)
-    }
-  }
+    },
+  },
 })

@@ -31,7 +31,7 @@ export const useVersionsStore = defineStore('versions', {
 
       // تحديث المشروع الحالي
       const projectStore = useCurrentProjectStore()
-      projectStore.updateVersion(newVersion)
+      projectStore.updateVersions(this.versions)
     },
 
     switchVersion(id: string) {
@@ -39,7 +39,7 @@ export const useVersionsStore = defineStore('versions', {
 
       const version = this.getCurrentVersion()
       const projectStore = useCurrentProjectStore()
-      projectStore.updateVersion(version)
+      projectStore.updateVersions(this.versions)
     }
   }
 })

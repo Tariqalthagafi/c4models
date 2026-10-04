@@ -1,7 +1,7 @@
 import { defineStore } from 'pinia'
 import { useProjectsStore } from './useProjectsStore'
 import { useCurrentProjectStore } from './useCurrentProjectStore'
-import type { ProjectSchemaV2 } from '@/core/schema/projectSchemaV2'
+import type { ProjectSchemaV3 } from '@/core/schema/projectSchemaV3'
 
 export const useEditorProjectsStore = defineStore('editorProjects', {
   state: () => ({
@@ -9,25 +9,24 @@ export const useEditorProjectsStore = defineStore('editorProjects', {
     activeProjectId: (() => {
       const id = localStorage.getItem('activeProjectId')
       return id && id.trim() !== '' ? id : null
-    })()
+    })(),
   }),
 
   getters: {
-    activeProject(): ProjectSchemaV2 | null {
+    activeProject(): ProjectSchemaV3 | null {
       const projectsStore = useProjectsStore()
-      return projectsStore.models.find(p => p.id === this.activeProjectId) || null
+      return projectsStore.models.find((p) => p.id === this.activeProjectId) || null
     },
 
-    openTabsProjects(): ProjectSchemaV2[] {
+    openTabsProjects(): ProjectSchemaV3[] {
       const projectsStore = useProjectsStore()
       return this.openTabs
-        .map(id => projectsStore.models.find(p => p.id === id))
-        .filter((p): p is ProjectSchemaV2 => !!p)
-    }
+        .map((id) => projectsStore.models.find((p) => p.id === id))
+        .filter((p): p is ProjectSchemaV3 => !!p)
+    },
   },
 
   actions: {
-
     // تحميل المشاريع قبل أي عملية
     async init() {
       const projectsStore = useProjectsStore()
@@ -37,10 +36,8 @@ export const useEditorProjectsStore = defineStore('editorProjects', {
     saveState() {
       localStorage.setItem('openTabs', JSON.stringify(this.openTabs))
 
-      if (this.activeProjectId)
-        localStorage.setItem('activeProjectId', this.activeProjectId)
-      else
-        localStorage.removeItem('activeProjectId')
+      if (this.activeProjectId) localStorage.setItem('activeProjectId', this.activeProjectId)
+      else localStorage.removeItem('activeProjectId')
     },
 
     // فتح مشروع في التابات
@@ -69,19 +66,17 @@ export const useEditorProjectsStore = defineStore('editorProjects', {
     closeProject(id: string) {
       const current = useCurrentProjectStore()
 
-      this.openTabs = this.openTabs.filter(tid => tid !== id)
+      this.openTabs = this.openTabs.filter((tid) => tid !== id)
 
       // إذا كان التاب المغلق هو التاب النشط
       if (this.activeProjectId === id) {
         this.activeProjectId = this.openTabs[0] || null
 
-        if (this.activeProjectId)
-          current.loadProject(this.activeProjectId)
-        else
-          current.closeProject()
+        if (this.activeProjectId) current.loadProject(this.activeProjectId)
+        else current.closeProject()
       }
 
       this.saveState()
-    }
-  }
+    },
+  },
 })

@@ -1,23 +1,22 @@
 import { defineStore } from 'pinia'
 
-import type { ProjectSchemaV2, VersionSchema } from '@/core/schema/projectSchemaV2'
+import type { ProjectSchemaV3, VersionSchemaV3 ,NodeSchemaV3 } from '@/core/schema/projectSchemaV3'
 import { useJsonStore } from './useJsonStore'
 
 export const useCurrentProjectStore = defineStore('currentProject', {
   state: () => ({
-    project: null as ProjectSchemaV2 | null
+    project: null as ProjectSchemaV3 | null,
   }),
 
   getters: {
-
-    versions(state): VersionSchema[] {
+    versions(state): VersionSchemaV3[] {
       return state.project?.versions || []
     },
 
-    currentVersion(state): VersionSchema | null {
+    currentVersion(state): VersionSchemaV3 | null {
       if (!state.project) return null
       const id = state.project.currentVersionId
-      return state.project.versions.find(v => v.id === id) || null
+      return state.project.versions.find((v) => v.id === id) || null
     },
 
     diagram(): { nodes: any[]; relations: any[] } | null {
@@ -25,7 +24,7 @@ export const useCurrentProjectStore = defineStore('currentProject', {
       if (!version) return null
       return {
         nodes: version.nodes,
-        relations: version.relations
+        relations: version.relations,
       }
     },
 
@@ -35,32 +34,34 @@ export const useCurrentProjectStore = defineStore('currentProject', {
 
     isLoaded(state) {
       return !!state.project
-    }
+    },
   },
 
   actions: {
+    addNode() {
+      if (!this.project) return
 
-   addNode() {
-  if (!this.project) return
+      const version = this.currentVersion
+      if (!version) return
 
-  const version = this.currentVersion
-  if (!version) return
-
-  const node = {
-    id: crypto.randomUUID(),
-    name: "New Node",
-    type: "generic",        // 👈 مهم جداً
-    collapsed: false,       // 👈 مهم جداً
-    children: [],
-    parent: null,
-    position: { x: 300, y: 200 }
+      const node: NodeSchemaV3 = {
+  id: crypto.randomUUID(),
+  name: "New Node",
+  type: "generic",
+  icon: "/icons/node.svg",
+  parentId: null,
+  childrenIds: [],
+  collapsed: false,
+  position: { x: 300, y: 200 },
+  details: {
+    description: "New node"
   }
-
-  version.nodes.push(node)
-  this.saveProject()
 }
-,
 
+
+      version.nodes.push(node)
+      this.saveProject()
+    },
     async loadProject(id: string) {
       const json = useJsonStore()
       const data = await json.readOne('projects', id)
@@ -77,19 +78,19 @@ export const useCurrentProjectStore = defineStore('currentProject', {
       await json.write('projects', clean)
     },
 
-    update(data: Partial<ProjectSchemaV2>) {
+    update(data: Partial<ProjectSchemaV3>) {
       if (!this.project) return
       Object.assign(this.project, data)
       this.saveProject()
     },
 
-    updateSettings(settings: ProjectSchemaV2['settings']) {
+    updateSettings(settings: ProjectSchemaV3['settings']) {
       if (!this.project) return
       this.project.settings = settings
       this.saveProject()
     },
 
-    updateVersions(versions: ProjectSchemaV2['versions']) {
+    updateVersions(versions: ProjectSchemaV3['versions']) {
       if (!this.project) return
       this.project.versions = versions
       this.saveProject()
@@ -98,7 +99,7 @@ export const useCurrentProjectStore = defineStore('currentProject', {
     switchVersion(id: string) {
       if (!this.project) return
 
-      const exists = this.project.versions.find(v => v.id === id)
+      const exists = this.project.versions.find((v) => v.id === id)
       if (!exists) return
 
       this.project.currentVersionId = id
@@ -108,12 +109,12 @@ export const useCurrentProjectStore = defineStore('currentProject', {
     createVersion(title = 'إصدار جديد') {
       if (!this.project) return
 
-      const version: VersionSchema = {
+      const version: VersionSchemaV3 = {
         id: crypto.randomUUID(),
         title,
         createdAt: new Date().toISOString(),
         nodes: [],
-        relations: []
+        relations: [],
       }
 
       this.project.versions.push(version)
@@ -125,7 +126,7 @@ export const useCurrentProjectStore = defineStore('currentProject', {
     deleteVersion(id: string) {
       if (!this.project) return
 
-      this.project.versions = this.project.versions.filter(v => v.id !== id)
+      this.project.versions = this.project.versions.filter((v) => v.id !== id)
 
       if (this.project.currentVersionId === id) {
         this.project.currentVersionId = this.project.versions[0]?.id || null
@@ -137,7 +138,7 @@ export const useCurrentProjectStore = defineStore('currentProject', {
     renameVersion(id: string, title: string) {
       if (!this.project) return
 
-      const v = this.project.versions.find(v => v.id === id)
+      const v = this.project.versions.find((v) => v.id === id)
       if (!v) return
 
       v.title = title
@@ -146,6 +147,6 @@ export const useCurrentProjectStore = defineStore('currentProject', {
 
     closeProject() {
       this.project = null
-    }
-  }
+    },
+  },
 })

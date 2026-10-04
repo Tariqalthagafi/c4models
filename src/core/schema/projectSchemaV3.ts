@@ -124,7 +124,7 @@ export const defaultSettingsV3 = {
 // ⭐ إنشاء مشروع جديد V3 — مع أول نود تلقائيًا
 // -------------------------------------------------------------
 
-export function createDefaultProjectV2(name: string): ProjectSchemaV3 {
+export function createDefaultProjectV3(name: string): ProjectSchemaV3 {
   const now = new Date().toISOString()
   const versionId = crypto.randomUUID()
 
