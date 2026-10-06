@@ -6,18 +6,24 @@
 
       <button class="back-btn" @click="goBack">← رجوع</button>
 
-      <div v-if="project" class="version-switcher">
-        <label>الإصدار:</label>
-        <select v-model="selectedVersionId">
-          <option
-            v-for="v in project.versions"
-            :key="v.id"
-            :value="v.id"
-          >
-            {{ v.title }}
-          </option>
-        </select>
-      </div>
+<div v-if="project" class="version-switcher">
+  <div class="version-dropdown" @click="toggleVersionMenu">
+    الإصدار: {{ currentVersion?.title }} ▼
+  </div>
+
+  <div v-if="showVersionMenu" class="version-menu">
+    <div
+      v-for="v in project.versions"
+      :key="v.id"
+      class="version-item"
+      @click="selectVersion(v.id)"
+    >
+      {{ v.title }}
+    </div>
+  </div>
+</div>
+
+
 
       <div v-if="project" class="view-modes">
         <button
@@ -69,22 +75,26 @@
       <p>لا يوجد مشروع مفتوح</p>
     </div>
 
-    <!-- يوجد مشروع -->
-    <div v-else>
+<!-- يوجد مشروع -->
+<div v-else :key="project.id">
 
-      <h1 class="title">{{ project.name }}</h1>
+  <h1 class="title">{{ project.name }}</h1>
 
-      <!-- ⭐ نمط البطاقات -->
-      <CardsView
-        v-if="viewMode === 'cards'"
-        :version="currentVersion"
-      />
+  <!-- ⭐ نمط البطاقات -->
+  <CardsView
+    v-if="viewMode === 'cards'"
+    :version="currentVersion"
+    :key="project.id"
+  />
 
+  <!-- ⭐ نمط الشجرة -->
+  <TreeView
+    v-if="viewMode === 'tree'"
+    :key="project.id"
+  />
 
-      <!-- ⭐ نمط الشجرة -->
-      <TreeView v-if="viewMode === 'tree'" />
+</div>
 
-    </div>
 
   </div>
 </template>
@@ -121,6 +131,8 @@ function toggleModels() {
 }
 
 function openModel(file: string) {
+  showModels.value = false
+
   fetch(`/files/${file}`)
     .then(res => res.json())
     .then(json => {
@@ -132,6 +144,8 @@ function openModel(file: string) {
 }
 
 function downloadModel(file: string) {
+  showModels.value = false
+
   const link = document.createElement("a")
   link.href = `/files/${file}`
   link.download = file
@@ -169,12 +183,36 @@ function openFile() {
  
   input.click()
 }
+
+const showVersionMenu = ref(false)
+
+function toggleVersionMenu() {
+  showVersionMenu.value = !showVersionMenu.value
+}
+
+function selectVersion(id: string) {
+  selectedVersionId.value = id
+  showVersionMenu.value = false
+}
+
 </script>
 
 
 <style scoped>
 .viewer {
   padding: 20px;
+}
+
+.empty {
+  display: flex;
+  justify-content: center;   /* توسيط أفقي */
+  align-items: center;        /* توسيط عمودي */
+  height: 100vh;              /* يخلي العنصر يغطي كامل الصفحة */
+  text-align: center;
+  color: #666;
+  font-size: 22px;
+  font-weight: 600;
+  font-family: 'Tajawal', sans-serif; /* هنا التعديل */
 }
 
 .header {
@@ -226,9 +264,49 @@ function openFile() {
 
 /* صندوق اختيار الإصدار */
 .version-switcher {
-  display: flex;
-  align-items: center;
-  gap: 8px;
+  position: relative;
+}
+
+.version-dropdown {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 8px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #444;
+  transition: 0.2s;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);
+}
+
+.version-dropdown:hover {
+  background: #000;
+  color: #fff;
+}
+
+.version-menu {
+  position: absolute;
+  top: 45px;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 10px;
+  width: 180px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+.version-item {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.version-item:hover {
+  background: #000;
+  color: #fff;
 }
 
 .version-switcher label {
@@ -302,6 +380,15 @@ function openFile() {
 .model-actions button:hover {
   background: #000;
   color: #fff;
+}
+
+.title {
+  text-align: center;        /* توسيط أفقي */
+  margin: 30px 0;            /* مسافة فوق وتحت */
+  font-size: 28px;
+  font-weight: 700;
+  color: #333;
+  font-family: 'Tajawal', sans-serif;
 }
 
 </style>

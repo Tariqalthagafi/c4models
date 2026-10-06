@@ -1,7 +1,8 @@
 <template>
   <div class="home">
-
+  <StageBadge />
     <div class="content">
+    
       <!-- الشعار -->
       <Logo />
 
@@ -23,6 +24,7 @@ import Logo from '../components/logo.vue'
 import Description from '../components/discription.vue'
 import GoogleLogin from '../components/google.vue'
 import Footer from '../components/footer.vue'
+import StageBadge from '../components/StageBadge.vue'
 </script>
 
 <style scoped>
